@@ -4,11 +4,11 @@ export default Ember.Controller.extend({
   isDisabled: true,
   emailAddress: '',
 
-  actualEmailAddress: function() {
+  actualEmailAddress: Ember.computed('emailAddress', function() {
     console.log('actualEmailAddress function is called: ', this.get('emailAddress'));
-  }.property('emailAddress'),
+  }),
 
-  emailAddressChanged: function() {
+  emailAddressChanged: Ember.observer('emailAddress', function() {
     console.log('observer is called', this.get('emailAddress'));
-  }.observes('emailAddress')
+  })
 });
