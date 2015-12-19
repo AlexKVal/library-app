@@ -6,5 +6,5 @@ export default Ember.Controller.extend({
 
   isEmailValid: Ember.computed.match('email', /^.+@.+\..+$/),
   isMessageValid: Ember.computed.gte('message.length', 5),
-  isSubmitButtonEnabled: true
+  isSubmitButtonEnabled: Ember.computed.and('isEmailValid', 'isMessageValid')
 });
