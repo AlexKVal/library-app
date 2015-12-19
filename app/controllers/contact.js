@@ -20,6 +20,18 @@ export default Ember.Controller.extend({
 
     return classes;
   }),
+  messageFeedbackClasses: Ember.computed('message', 'isMessageValid', function() {
+    let classes = '';
+
+    if (this.get('message').length > 0) {
+      classes += 'has-feedback';
+
+      if (this.get('isMessageValid')) classes += ' has-success';
+      else classes += ' has-error';
+    }
+
+    return classes;
+  }),
 
   responseMessage: '',
   actions: {
