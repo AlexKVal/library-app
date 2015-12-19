@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
 
-    <div class="form-group has-feedback has-{{if isEmailValid 'success' 'error'}}">
+    <div class="form-group {{emailFeedbackClasses}}">
       {{input value=email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
       <span class="glyphicon form-control-feedback glyphicon-{{if isEmailValid 'ok' 'remove'}}" aria-hidden="true"></span>
     </div>

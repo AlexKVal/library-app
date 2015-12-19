@@ -8,6 +8,19 @@ export default Ember.Controller.extend({
   isMessageValid: Ember.computed.gte('message.length', 5),
   isSubmitButtonEnabled: Ember.computed.and('isEmailValid', 'isMessageValid'),
 
+  emailFeedbackClasses: Ember.computed('email', 'isEmailValid', function() {
+    let classes = '';
+
+    if (this.get('email').length > 0) {
+      classes += 'has-feedback';
+
+      if (this.get('isEmailValid')) classes += ' has-success';
+      else classes += ' has-error';
+    }
+
+    return classes;
+  }),
+
   responseMessage: '',
   actions: {
     sendMessage() {
