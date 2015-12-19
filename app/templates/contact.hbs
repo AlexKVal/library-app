@@ -4,11 +4,11 @@
   </div>
   <div class="panel-body">
 
-    <div class="form-group {{emailFeedbackClasses}}">
+    <div class="form-group {{feedback-classes length=email.length isValid=isEmailValid}}">
       {{input value=email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
       <span class="glyphicon form-control-feedback glyphicon-{{if isEmailValid 'ok' 'remove'}}" aria-hidden="true"></span>
     </div>
-    <div class="form-group {{messageFeedbackClasses}}">
+    <div class="form-group {{feedback-classes length=message.length isValid=isMessageValid}}">
       {{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" required="true"}}
       <span class="glyphicon form-control-feedback glyphicon-{{if isMessageValid 'ok' 'remove'}}" aria-hidden="true"></span>
     </div>
