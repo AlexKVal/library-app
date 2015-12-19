@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   email: '',
-  isEmailValid: Ember.computed.match('email', /^.+@.+\..+$/),
+  message: '',
 
+  isEmailValid: Ember.computed.match('email', /^.+@.+\..+$/),
+  isMessageValid: Ember.computed.gte('message.length', 5),
   isSubmitButtonEnabled: true
 });
