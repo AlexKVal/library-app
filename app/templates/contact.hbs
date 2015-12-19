@@ -3,13 +3,16 @@
     <h3 class="panel-title">Contact Page</h3>
   </div>
   <div class="panel-body">
-    <div class="form-group">
+    <div class="form-group has-feedback has-success">
       {{input value=email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
-      <br>
+      <span class="glyphicon form-control-feedback glyphicon-ok" aria-hidden="true"></span>
+    </div>
+    <div class="form-group has-feedback has-error">
       {{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" required="true"}}
+      <span class="glyphicon form-control-feedback glyphicon-remove" aria-hidden="true"></span>
     </div>
   </div>
   <div class="panel-footer">
-    <button disabled="{{unless isValid 'disabled'}}" type="button" class="btn btn-primary">Send message</button>
+    <button disabled="{{unless isSubmitButtonEnabled 'disabled'}}" type="button" class="btn btn-primary">Send message</button>
   </div>
 </div>
