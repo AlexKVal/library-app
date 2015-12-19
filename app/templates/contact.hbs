@@ -3,6 +3,7 @@
     <h3 class="panel-title">Contact Page</h3>
   </div>
   <div class="panel-body">
+
     <div class="form-group has-feedback has-{{if isEmailValid 'success' 'error'}}">
       {{input value=email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
       <span class="glyphicon form-control-feedback glyphicon-{{if isEmailValid 'ok' 'remove'}}" aria-hidden="true"></span>
@@ -11,8 +12,13 @@
       {{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" required="true"}}
       <span class="glyphicon form-control-feedback glyphicon-{{if isMessageValid 'ok' 'remove'}}" aria-hidden="true"></span>
     </div>
+
+    {{#if responseMessage}}
+      <div class="alert alert-success">{{responseMessage}}</div>
+    {{/if}}
+
   </div>
   <div class="panel-footer">
-    <button disabled="{{unless isSubmitButtonEnabled 'disabled'}}" type="button" class="btn btn-primary">Send message</button>
+    <button disabled="{{unless isSubmitButtonEnabled 'disabled'}}" type="button" class="btn btn-primary" {{action 'sendMessage'}}>Send message</button>
   </div>
 </div>
