@@ -3,11 +3,11 @@
     <h3 class="panel-title">Contact Page</h3>
   </div>
   <div class="panel-body">
-    <div class="form-group has-feedback has-success">
+    <div class="form-group has-feedback has-{{if isEmailValid 'success' 'error'}}">
       {{input value=email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
       <span class="glyphicon form-control-feedback glyphicon-ok" aria-hidden="true"></span>
     </div>
-    <div class="form-group has-feedback has-error">
+    <div class="form-group has-feedback has-{{if isMessageValid 'success' 'error'}}">
       {{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" required="true"}}
       <span class="glyphicon form-control-feedback glyphicon-remove" aria-hidden="true"></span>
     </div>
