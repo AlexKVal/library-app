@@ -11,6 +11,9 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
+  // TODO:
+  //<span class="glyphicon form-control-feedback glyphicon-{{if model 'ok' 'remove'}}" aria-hidden="true"></span>
+
   this.render(hbs`{{feedback-icon}}`);
 
   assert.equal(this.$().text().trim(), '');
