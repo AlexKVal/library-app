@@ -11,11 +11,16 @@ export default Ember.Controller.extend({
   responseMessage: '',
   actions: {
     sendMessage() {
-      let msg = `Message has been sent to: ${this.get('email')}`;
-      console.log(msg);
-      this.set('responseMessage', msg);
-      this.set('email', '');
-      this.set('message', '');
+      const newContact = this.get('model');
+      newContact.email = this.get('email');
+      newContact.message = this.get('message');
+
+      newContact.save().then((contact) => {
+        const msg = `Message has been sent to: ${contact.email}`;
+        this.set('responseMessage', msg);
+        this.set('email', '');
+        this.set('message', '');
+      });
     }
   }
 });
