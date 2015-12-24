@@ -11,6 +11,7 @@ export default Ember.Route.extend({
       if (model.get('isNew')) {
         model.destroyRecord();
       }
+      this.controller.set('responseMessage', '');
     }
   }
 });
