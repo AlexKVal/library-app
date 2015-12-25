@@ -6,6 +6,16 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    sendMessage(newContact) {
+
+      newContact.save().then((contact) => {
+        const msg = `Message has been sent to: ${contact.get('email')}`;
+        this.controller.set('responseMessage', msg);
+
+        this.controller.set('model', this.store.createRecord('contact'));
+      });
+    },
+
     willTransition() {
       let model = this.controller.get('model');
       if (model.get('isNew')) {
