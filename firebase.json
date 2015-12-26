@@ -1,0 +1,15 @@
+{
+  "firebase": "glowing-heat-1969",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/tmp/**"
+  ],
+  "rewrites": [{
+    "source": "**",
+    "destination": "/index.html"
+  }]
+}
