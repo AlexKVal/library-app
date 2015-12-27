@@ -6,11 +6,15 @@
 
     <div class="form-group {{feedback-classes length=model.email.length isValid=model.isEmailValid}}">
       {{input value=model.email class="form-control" type="email" placeholder="Your email..." autofocus="true"}}
-      {{feedback-icon model=model.isEmailValid}}
+      {{#if model.email.length}}
+        {{feedback-icon model=model.isEmailValid}}
+      {{/if}}
     </div>
     <div class="form-group {{feedback-classes length=model.message.length isValid=model.isMessageValid}}">
       {{textarea value=model.message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" required="true"}}
-      {{feedback-icon model=model.isMessageValid}}
+      {{#if model.message.length}}
+        {{feedback-icon model=model.isMessageValid}}
+      {{/if}}
     </div>
 
     {{#if responseMessage}}
