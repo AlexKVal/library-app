@@ -3,15 +3,20 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th class="col-xs-4">ID</th>
       <th>E-mail</th>
+      <th class="col-xs-1"></th>
     </tr>
   </thead>
   <tbody>
     {{#each model as |invitation|}}
       <tr>
-        <th>{{invitation.id}}</th>
+        <td>{{invitation.id}}</td>
         <td>{{invitation.email}}</td>
+        <td class="text-center">
+          <button class="btn btn-xs btn-danger"
+            {{action 'deleteInvitation' invitation}}>Delete</button>
+        </td>
       </tr>
     {{/each}}
   </tbody>
