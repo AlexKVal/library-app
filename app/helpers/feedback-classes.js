@@ -6,8 +6,12 @@ export function feedbackClasses(params, { length, isValid }) {
   if (length > 0) {
     classes += 'has-feedback';
 
-    if (isValid) classes += ' has-success';
-    else classes += ' has-error';
+    if (isValid) {
+      classes += ' has-success';
+    }
+    else {
+      classes += ' has-error';
+    }
   }
 
   return classes;
