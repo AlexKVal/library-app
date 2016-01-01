@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     controller.set('buttonLabel', 'Create');
   },
 
-  renderTemplate(controller, model) {
+  renderTemplate() {
     this.render('libraries/form');
   },
 

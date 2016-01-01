@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     buttonClicked(param) {
-      this.sendAction('action', param)
+      this.sendAction('action', param);
     }
   }
 });

@@ -13,7 +13,7 @@ export default Ember.Route.extend({
     controller.set('buttonLabel', 'Save changes 2');
   },
 
-  renderTemplate(controller, model) {
+  renderTemplate() {
     this.render('libraries/form');
   },
 
