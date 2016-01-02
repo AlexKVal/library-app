@@ -13,6 +13,7 @@
     "qunit": "~1.20.0",
     "bootstrap-sass": "~3.3.6",
     "firebase": "^2.3.2",
-    "ember-resolver": "~0.1.18"
+    "ember-resolver": "~0.1.18",
+    "Faker": "~3.0.1"
   }
 }
